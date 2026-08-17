@@ -1,0 +1,684 @@
+teams:
+  - name: CRC
+    members:
+      - lstocchi
+      - vyasgun
+      - albfan
+      - anjannath
+      - evidolob
+      - redbeam
+      - cfergeau
+      - praveenkumar
+
+  - name: PodmanDesktop
+    members:
+      - deboer-tim
+      - vancura
+      - rujutashinde
+      - danivilla9
+      - cbr7
+      - serbangeorge-m
+      - cdrage
+      - MarsKubeX
+      - SoniaSandler
+      - jeffmaury
+      - feloy
+      - axel7083
+      - simonrey1
+      - bmahabirbu
+      - benoitf
+      - jiridostal
+      - amisskii
+      - JustMell0
+      - gastoner
+      - ScrewTSW
+      - odockal
+      - dgolovin
+      - vzhukovs
+
+  - name: Kaiden
+    members:
+      - jeffmaury
+      - gastoner
+      - bmahabirbu
+      - benoitf
+      - fbricon
+      - MarsKubeX
+      - serbangeorge-m
+      - vancura
+
+# Should we use the more efficient GitHubIssue field for duplicate detection?
+jiraProjectsWithGitHubIssueField:
+      - CRC
+      - KAIDEN
+      - PODMAND
+
+githubProjects: []
+statusTypeMappings: []
+priorityTypeMappings: []
+
+# Issue type mappings (GitHub labels → Jira issue types)
+issuesTypeMappings:
+  - name: Issue Mapping
+    default: Task
+    mapping:
+      - fromGithubLabel: epic
+        toJira: Epic
+      - fromGithubLabel: bug
+        toJira: Bug
+      - fromGithubLabel: task
+        toJira: Task
+      - fromGithubLabel: story
+        toJira: Story
+
+# ============================================================================
+# CRC Team - 7 Repos
+# ============================================================================
+syncProjects:
+  - name: "CRC - crc-org/crc"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: crc
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:CRC
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: CRC
+      component: crc-org/crc
+      globalIdPrefix: CRC-CRC
+    maxBatchSize: 50
+
+  - name: "CRC - crc-org/snc"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: snc
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:CRC
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: CRC
+      component: crc-org/snc
+      globalIdPrefix: CRC-SNC
+    maxBatchSize: 50
+
+  - name: "CRC - crc-org/vfkit"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: vfkit
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:CRC
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: CRC
+      component: crc-org/vfkit
+      globalIdPrefix: CRC-VFKIT
+    maxBatchSize: 50
+
+  - name: "CRC - crc-org/macadam"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: macadam
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:CRC
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: CRC
+      component: crc-org/macadam
+      globalIdPrefix: CRC-MACADAM
+    maxBatchSize: 50
+
+  - name: "CRC - crc-org/crc-trigger"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: crc-trigger
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:CRC
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: CRC
+      component: crc-org/crc-trigger
+      globalIdPrefix: CRC-TRIGGER
+    maxBatchSize: 50
+
+  - name: "CRC - crc-org/admin-helper"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: admin-helper
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:CRC
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: CRC
+      component: crc-org/admin-helper
+      globalIdPrefix: CRC-ADMIN
+    maxBatchSize: 50
+
+  - name: "CRC - openshift/release"
+    skipDuplicateDetection: true
+    github:
+      owner: openshift
+      repo: release
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:CRC
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: CRC
+      component: openshift/release
+      globalIdPrefix: CRC-RELEASE
+    maxBatchSize: 50
+
+  # ============================================================================
+  # PodmanDesktop Team - 27 Repos
+  # ============================================================================
+
+  # Containers repos
+  - name: "PodmanDesktop - podman-container-tools/podman"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-container-tools
+      repo: podman
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-container-tools/podman
+      globalIdPrefix: PD-PODMAN
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - containers/podman-desktop-extension-ai-lab"
+    skipDuplicateDetection: true
+    github:
+      owner: containers
+      repo: podman-desktop-extension-ai-lab
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: containers/podman-desktop-extension-ai-lab
+      globalIdPrefix: PD-AI-LAB
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - containers/podman-desktop-extension-ai-lab-playground-images"
+    skipDuplicateDetection: true
+    github:
+      owner: containers
+      repo: podman-desktop-extension-ai-lab-playground-images
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: containers/podman-desktop-extension-ai-lab-playground-images
+      globalIdPrefix: PD-AI-LAB-IMG
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - containers/podman.io"
+    skipDuplicateDetection: true
+    github:
+      owner: containers
+      repo: podman.io
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: containers/podman.io
+      globalIdPrefix: PD-PODMAN-IO
+    maxBatchSize: 50
+
+  # CRC org repos
+  - name: "PodmanDesktop - crc-org/crc-extension"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: crc-extension
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: crc-org/crc-extension
+      globalIdPrefix: PD-CRC-EXT
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - crc-org/macadam.js"
+    skipDuplicateDetection: true
+    github:
+      owner: crc-org
+      repo: macadam.js
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: crc-org/macadam.js
+      globalIdPrefix: PD-MACADAM-JS
+    maxBatchSize: 50
+
+  # MINC org repos
+  - name: "PodmanDesktop - minc-org/minc-extension"
+    skipDuplicateDetection: true
+    github:
+      owner: minc-org
+      repo: minc-extension
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: minc-org/minc-extension
+      globalIdPrefix: PD-MINC
+    maxBatchSize: 50
+
+  # Podman Desktop repos
+  - name: "PodmanDesktop - podman-desktop/e2e"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: e2e
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/e2e
+      globalIdPrefix: PD-E2E
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-bootc"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-bootc
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-bootc
+      globalIdPrefix: PD-EXT-BOOTC
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-compose"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-compose
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-compose
+      globalIdPrefix: PD-EXT-COMPOSE
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-github"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-github
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-github
+      globalIdPrefix: PD-EXT-GITHUB
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-grype"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-grype
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-grype
+      globalIdPrefix: PD-EXT-GRYPE
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-kind"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-kind
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-kind
+      globalIdPrefix: PD-EXT-KIND
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-kubernetes-contexts"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-kubernetes-contexts
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-kubernetes-contexts
+      globalIdPrefix: PD-EXT-K8S-CTX
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-kubernetes-dashboard"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-kubernetes-dashboard
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-kubernetes-dashboard
+      globalIdPrefix: PD-EXT-K8S-DASH
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-layers-explorer"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-layers-explorer
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-layers-explorer
+      globalIdPrefix: PD-EXT-LAYERS
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-minikube"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-minikube
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-minikube
+      globalIdPrefix: PD-EXT-MINIKUBE
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-pack-kubernetes"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-pack-kubernetes
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-pack-kubernetes
+      globalIdPrefix: PD-EXT-PACK-K8S
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-podman-quadlet"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-podman-quadlet
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-podman-quadlet
+      globalIdPrefix: PD-EXT-QUADLET
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/extension-postgresql"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: extension-postgresql
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/extension-postgresql
+      globalIdPrefix: PD-EXT-POSTGRES
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/podman-desktop"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: podman-desktop
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/podman-desktop
+      globalIdPrefix: PD-DESKTOP
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - podman-desktop/podman-desktop-catalog"
+    skipDuplicateDetection: true
+    github:
+      owner: podman-desktop
+      repo: podman-desktop-catalog
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: podman-desktop/podman-desktop-catalog
+      globalIdPrefix: PD-CATALOG
+    maxBatchSize: 50
+
+  # Red Hat Developer repos
+  - name: "PodmanDesktop - redhat-developer/podman-desktop-hummingbird-ext"
+    skipDuplicateDetection: true
+    github:
+      owner: redhat-developer
+      repo: podman-desktop-hummingbird-ext
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: redhat-developer/podman-desktop-hummingbird-ext
+      globalIdPrefix: PD-HUMMINGBIRD
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - redhat-developer/podman-desktop-image-checker-openshift-ext"
+    skipDuplicateDetection: true
+    github:
+      owner: redhat-developer
+      repo: podman-desktop-image-checker-openshift-ext
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: redhat-developer/podman-desktop-image-checker-openshift-ext
+      globalIdPrefix: PD-IMG-CHK-OS
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - redhat-developer/podman-desktop-redhat-account-ext"
+    skipDuplicateDetection: true
+    github:
+      owner: redhat-developer
+      repo: podman-desktop-redhat-account-ext
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: redhat-developer/podman-desktop-redhat-account-ext
+      globalIdPrefix: PD-RH-ACCT
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - redhat-developer/podman-desktop-rhel-ext"
+    skipDuplicateDetection: true
+    github:
+      owner: redhat-developer
+      repo: podman-desktop-rhel-ext
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: redhat-developer/podman-desktop-rhel-ext
+      globalIdPrefix: PD-RHEL
+    maxBatchSize: 50
+
+  - name: "PodmanDesktop - redhat-developer/podman-desktop-sandbox-ext"
+    skipDuplicateDetection: true
+    github:
+      owner: redhat-developer
+      repo: podman-desktop-sandbox-ext
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:PodmanDesktop
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: PODMAND
+      component: redhat-developer/podman-desktop-sandbox-ext
+      globalIdPrefix: PD-SANDBOX
+    maxBatchSize: 50
+
+  # ============================================================================
+  # Kaiden Team - 1 Repo
+  # ============================================================================
+
+  - name: "Kaiden - openkaiden/kaiden"
+    skipDuplicateDetection: true
+    github:
+      owner: openkaiden
+      repo: kaiden
+      afterDate: "2026-06-01T00:00:00Z"
+      syncMode: basic
+      assigneeAllowlist:
+        - team:Kaiden
+    useMapping:
+      issueType: Issue Mapping
+    jira:
+      projectKey: KAIDEN
+      component: openkaiden/kaiden
+      globalIdPrefix: KA-KAIDEN
+    maxBatchSize: 50

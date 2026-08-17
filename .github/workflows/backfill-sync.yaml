@@ -1,0 +1,35 @@
+  name: Backfill GitHub to Jira
+
+  on:
+    schedule:
+      - cron: '25 */2 * * *'  # Every 2 hours
+    workflow_dispatch:          # Manual trigger
+
+  jobs:
+    sync:
+      runs-on: ubuntu-24.04
+      steps:
+        - uses: actions/checkout@v4
+
+        - name: Restore state
+          run: |
+            if [ -z "${{ vars.SYNC_STATE }}" ]; then
+              echo "No previous state — starting fresh"
+            else
+              echo "Restoring previous sync state"
+              echo "${{ vars.SYNC_STATE }}" > sync-state.yaml
+            fi
+
+        - name: Run GitHub to Jira Action
+          uses: mattreid/github-to-jira-action@next
+          with:
+            jira-host: ${{ secrets.JIRA_HOST }}
+            jira-email: ${{ secrets.JIRA_EMAIL }}
+            jira-write-token: ${{ secrets.JIRA_WRITE_TOKEN }}
+            github-read-token: ${{ secrets.GITHUB_READ_TOKEN }}
+
+        - name: Persist state
+          env:
+            GH_TOKEN: ${{ secrets.SET_VARIABLE_GITHUB_TOKEN }}
+          run: |
+            gh variable set SYNC_STATE < sync-state.yaml

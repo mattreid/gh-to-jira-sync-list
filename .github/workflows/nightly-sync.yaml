@@ -1,0 +1,37 @@
+name: nightly-sync
+
+on:
+  schedule:
+    # 8:25 PM EDT (Mon-Fri) = 00:25 UTC (Tue-Sat)
+    - cron: '25 0 * * 2-6'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore state
+        run: |
+          if [ -z "${{ vars.SYNC_STATE }}" ]; then
+            echo "no previous sync state"
+          else
+            echo "restoring sync state"
+            echo "${{ vars.SYNC_STATE }}" > sync-state.yaml
+            cat sync-state.yaml
+          fi
+
+      - name: Run GitHub to Jira Action
+        uses: mattreid/github-to-jira-action@next
+        with:
+          jira-host: ${{ secrets.JIRA_HOST }}
+          jira-email: ${{ secrets.JIRA_EMAIL }}
+          jira-write-token: ${{ secrets.JIRA_WRITE_TOKEN }}
+          github-read-token: ${{ secrets.GH_READ_TOKEN }}
+
+      - name: Persist state
+        env:
+          GH_TOKEN: ${{ secrets.SET_VARIABLE_GITHUB_TOKEN }}
+        run: |
+          gh variable set SYNC_STATE < sync-state.yaml
