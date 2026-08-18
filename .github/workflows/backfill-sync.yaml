@@ -30,7 +30,7 @@
             jira-host: ${{ secrets.JIRA_HOST }}
             jira-email: ${{ secrets.JIRA_EMAIL }}
             jira-write-token: ${{ secrets.JIRA_WRITE_TOKEN }}
-            github-read-token: ${{ secrets.GITHUB_READ_TOKEN }}
+            github-read-token: ${{ secrets.GH_READ_TOKEN }}
 
         - name: Persist state
           env:
