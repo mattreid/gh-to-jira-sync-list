@@ -76,7 +76,7 @@ issuesTypeMappings:
 # ============================================================================
 syncProjects:
   - name: "CRC - crc-org/crc"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: crc
@@ -93,7 +93,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "CRC - crc-org/snc"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: snc
@@ -110,7 +110,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "CRC - crc-org/vfkit"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: vfkit
@@ -127,7 +127,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "CRC - crc-org/macadam"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: macadam
@@ -144,7 +144,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "CRC - crc-org/crc-trigger"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: crc-trigger
@@ -161,7 +161,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "CRC - crc-org/admin-helper"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: admin-helper
@@ -178,7 +178,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "CRC - openshift/release"
-    skipDuplicateDetection: true
+
     github:
       owner: openshift
       repo: release
@@ -200,7 +200,7 @@ syncProjects:
 
   # Containers repos
   - name: "PodmanDesktop - podman-container-tools/podman"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-container-tools
       repo: podman
@@ -217,7 +217,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - containers/podman-desktop-extension-ai-lab"
-    skipDuplicateDetection: true
+
     github:
       owner: containers
       repo: podman-desktop-extension-ai-lab
@@ -234,7 +234,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - containers/podman-desktop-extension-ai-lab-playground-images"
-    skipDuplicateDetection: true
+
     github:
       owner: containers
       repo: podman-desktop-extension-ai-lab-playground-images
@@ -251,7 +251,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - containers/podman.io"
-    skipDuplicateDetection: true
+
     github:
       owner: containers
       repo: podman.io
@@ -269,7 +269,7 @@ syncProjects:
 
   # CRC org repos
   - name: "PodmanDesktop - crc-org/crc-extension"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: crc-extension
@@ -286,7 +286,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - crc-org/macadam.js"
-    skipDuplicateDetection: true
+
     github:
       owner: crc-org
       repo: macadam.js
@@ -304,7 +304,7 @@ syncProjects:
 
   # MINC org repos
   - name: "PodmanDesktop - minc-org/minc-extension"
-    skipDuplicateDetection: true
+
     github:
       owner: minc-org
       repo: minc-extension
@@ -322,7 +322,7 @@ syncProjects:
 
   # Podman Desktop repos
   - name: "PodmanDesktop - podman-desktop/e2e"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: e2e
@@ -339,7 +339,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-bootc"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-bootc
@@ -356,7 +356,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-compose"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-compose
@@ -373,7 +373,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-github"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-github
@@ -390,7 +390,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-grype"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-grype
@@ -407,7 +407,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-kind"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-kind
@@ -424,7 +424,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-kubernetes-contexts"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-kubernetes-contexts
@@ -441,7 +441,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-kubernetes-dashboard"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-kubernetes-dashboard
@@ -458,7 +458,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-layers-explorer"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-layers-explorer
@@ -475,7 +475,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-minikube"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-minikube
@@ -492,7 +492,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-pack-kubernetes"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-pack-kubernetes
@@ -509,7 +509,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-podman-quadlet"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-podman-quadlet
@@ -526,7 +526,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/extension-postgresql"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: extension-postgresql
@@ -543,7 +543,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/podman-desktop"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: podman-desktop
@@ -560,7 +560,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - podman-desktop/podman-desktop-catalog"
-    skipDuplicateDetection: true
+
     github:
       owner: podman-desktop
       repo: podman-desktop-catalog
@@ -578,7 +578,7 @@ syncProjects:
 
   # Red Hat Developer repos
   - name: "PodmanDesktop - redhat-developer/podman-desktop-hummingbird-ext"
-    skipDuplicateDetection: true
+
     github:
       owner: redhat-developer
       repo: podman-desktop-hummingbird-ext
@@ -595,7 +595,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - redhat-developer/podman-desktop-image-checker-openshift-ext"
-    skipDuplicateDetection: true
+
     github:
       owner: redhat-developer
       repo: podman-desktop-image-checker-openshift-ext
@@ -612,7 +612,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - redhat-developer/podman-desktop-redhat-account-ext"
-    skipDuplicateDetection: true
+
     github:
       owner: redhat-developer
       repo: podman-desktop-redhat-account-ext
@@ -629,7 +629,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - redhat-developer/podman-desktop-rhel-ext"
-    skipDuplicateDetection: true
+
     github:
       owner: redhat-developer
       repo: podman-desktop-rhel-ext
@@ -646,7 +646,7 @@ syncProjects:
     maxBatchSize: 50
 
   - name: "PodmanDesktop - redhat-developer/podman-desktop-sandbox-ext"
-    skipDuplicateDetection: true
+
     github:
       owner: redhat-developer
       repo: podman-desktop-sandbox-ext
@@ -667,7 +667,7 @@ syncProjects:
   # ============================================================================
 
   - name: "Kaiden - openkaiden/kaiden"
-    skipDuplicateDetection: true
+
     github:
       owner: openkaiden
       repo: kaiden
