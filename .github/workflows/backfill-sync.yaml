@@ -5,6 +5,10 @@
       - cron: '25 */2 * * *'  # Every 2 hours
     workflow_dispatch:          # Manual trigger
 
+  concurrency:
+    group: jira-sync
+    cancel-in-progress: false
+
   jobs:
     sync:
       runs-on: ubuntu-24.04
